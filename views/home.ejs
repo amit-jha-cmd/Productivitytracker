@@ -1,17 +1,21 @@
 <% include partials/header%>
 
 <div class="container-fluid container-cust">
-	<div style="float: right; border-left: 1px gray solid; 
-	padding-left: 40px;">
-		<ul>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
+
+	<dir id="user-detail">
+		<p>Timeline</p>
+		<hr>
+		<button>Year</button>
+		<hr>
+		<ul id="list">
+			<li><a href="#">2016</a></li>
+			<li><a href="#">2017</a></li>
+			<li><a href="#">2018</a></li>
 		</ul>
-	</div>
+	</dir>
+
 	<div>
-	<!-- ====AREA WHERE THE LOGS WILL BE DISPLAYED===== -->
+		<!-- ====AREA WHERE THE LOGS WILL BE DISPLAYED===== -->
 		<div id="main">
 			<ul id="list">
 				<div id="top-date"><p class="entered-sol-day" id="day">time</p></div>
@@ -22,7 +26,9 @@
 								<dir class="entered-log">
 									<p class="entered-sol"><%=log.log_time%></p>
 									<p class="log_display"><%= log.data%></p>
-									<form class="del-form" method="POST" action="/del/<%=logs.indexOf(log)%>">
+									<form class="del-form" 
+									method="POST" 
+									action="/del/<%=logs.indexOf(log)%>">
 									<input type="submit" id="del-button" value="X">
 									</form>
 								</dir>
@@ -34,7 +40,6 @@
 		</div>
 
 		<!-- AREA FROM WHERE THE INPUTS ARE BEING TAKEN -->
-		
 		<div id="input">
 			<div id="character-count-div"><p id="character-count">Character count</p></div>
 			<form  action="/post" method="POST">
@@ -46,15 +51,8 @@
 			<button id="submit">LOG</button>
 		</form>
 		</div>
-		<!-- ============================================== -->
-
-		<!-- <dir id="user-detail">
-			<ul id="list">
-				<li><a href="#">2016</a></li>
-				<li><a href="#">2017</a></li>
-				<li><a href="#">2018</a></li>
-			</ul>
-		</dir> -->
+	<!-- ============================================== -->
 	</div>
+	
 </div>
 <% include partials/footer %>

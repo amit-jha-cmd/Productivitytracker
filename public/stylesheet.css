@@ -91,10 +91,10 @@ li a:hover {
 }
 
 #main {
-	margin-top: 20px;
-	background: #E7E7E7;
+	margin-top: 40px;
+	background: #F1F1F1;
 	margin-left: 10px;
-	width: 80%;
+	/*min-width: 300px;*/
 	height: auto;
 	overflow: hidden;
 	border-radius: 10px;
@@ -106,17 +106,20 @@ li a:hover {
 #input {
 	margin-top: auto;
 	position: inherit;
+	display: inline-block;
 	border: none;
 	height: 100px;
-	margin-left: 30px;
+	/*margin-left: 10px;*/
+	min-width: 300px;
+	width: 100%;
 }
 /*Text area*/
 #log {
 	position: inherit;
 	border: none;
-	width: auto;
+	width: inherit;
 	height: 100px;
-	/*overflow: hidden;*/
+	overflow: hidden;
 	margin-left: -20px;
 	margin-top: 3px;
 	font-family: sans-serif;
@@ -137,11 +140,11 @@ li a:hover {
 }
 /*The log button*/
 #submit {
-	width: 80px;
+	width: 60px;
 	height: 50px;
 	border:none;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	/*padding-bottom: 5px;*/
 	/*padding-top: 15px;*/
 	position: relative;
@@ -169,6 +172,7 @@ li a:hover {
 #sol {
 	display: inline-block;
 	padding: 15px;
+	margin-left: -5px;
 	background: #E7E7E7;
 	position: relative;
 	top: -50px;
@@ -183,7 +187,7 @@ li a:hover {
 
 #shape {
 	display: inline-block;
-	width: 60%;
+	width: auto;
 	overflow: hidden;
 	position: relative;
 	border-bottom-right-radius: 30px;
@@ -235,42 +239,69 @@ li a:hover {
 }
 
 #user-detail {
-	border: 1px solid;
-	/*padding-left: 5%;*/
-	display: block;
-	position: absolute;
-	/*left: 82%;*/
+	float: right; 
+	color: gray;
+	/*margin-right: 50px; */
+	margin-left: 10px;
+	margin-top: -5px;
+	display: inline-block;	
+	/*border-left: 1px gray solid; */
 	align-content: center;
-	top: 0px;
+	list-style-type: none; 
+	text-decoration-style: none
+}
+
+#user-detail button {
+	/*border: 1px  solid gray;*/
+	background: #E7E7E7;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 25px;
+	box-shadow: none;
+	outline-style: none;
+}
+
+#user-detil button:hover {
+	box-shadow: none;
+	background: #D5D5D5;
 }
 
 #user-detail a {
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-top: 7px;
-	padding-bottom: 7px;
+	/*padding-right: 15px;*/
+	/*padding-left: 15px;*/
+	/*padding-top: 7px;*/
+	/*padding-bottom: 7px;*/
 	background: #E7E7E7;
-	top: -20px;
-	width: 70px;
-	text-align: center;
+	/*top: -20px;*/
+	/*width: auto;*/
+	/*text-align: center;*/
 	color: white;
 	border-radius: 4px;
 	color: #676767;
 	font-family: sans-serif;
-	/*margin-right: 30px;*/
+	/*margin-right: auto;*/
+	/*text-align: center;*/
 	margin-top: 10px;
 }
 
 #user-detail a:hover {
-	box-shadow: 0px 3px 8px gray;
+	/*box-shadow: 0px 3px 8px gray;*/
+	background: #D5D5D5;
 }
 
 #user-detail a:active {
 	box-shadow: none;
 }
 
+#user-detail p {
+	text-align: center;
+	font-weight: bold;
+	font-size: 112%;
+}
+
 #list {
 	list-style-type: none;
+	margin-right: 35px;
 }
 
 #del-button {
@@ -345,5 +376,20 @@ li a:hover {
 
 #container-cust {
 	position: absolute;
+	align-content: center;
 }
-/*=================END-USER=====================*/
+
+/*.first {
+	float: right; 
+	color: gray;
+	margin-right: 60px; 
+	margin-left: 20px;
+	border-left: 1px gray solid; 
+	align-content: center;
+	list-style-type: none; 
+	text-decoration-style: none
+}
+
+.first p {
+	margin-left: 40px;
+}*/

@@ -15,4 +15,4 @@ It can also be deployed to a workspace to measure employee productivity for effe
 2. Amit Jha (@devbihari)
 
 ## Additional Documentation
-[Client Application] (./clientApp/readme.md)
+[Client Application](./clientApp/readme.md)

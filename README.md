@@ -13,3 +13,6 @@ It can also be deployed to a workspace to measure employee productivity for effe
 ## Developers 
 1. Sanjana Dabbiru (@sanjanadabbiru)
 2. Amit Jha (@devbihari)
+
+## Additional Documentation
+[Client Application] (./clientApp/readme.md)

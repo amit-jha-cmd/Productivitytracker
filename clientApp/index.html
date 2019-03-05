@@ -33,24 +33,27 @@
           href="#contact" 
           role="tab" 
           aria-controls="contact"
-          aria-selected="false">about</a>
+          aria-selected="false">About</a>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="user_container row" >
-                <div id="card" class="col-sm">
+                <div id="card">
                     <div id="card_title">
                         Analysis
-                    </div>                              
+                    </div>
+                    <div>
+                        <canvas id="countries" width="300" height="300"></canvas>
+                    </div>                           
                 </div>
-                <div id="card" class="col-sm">
+                <div id="card">
                     <div id="card_title">
                             Productivity
                         </div> 
                 </div>
 
-                <div id="card" class="col-sm" style="margin-right:10px;">
+                <div id="card" style="margin-right:10px;">
                     <div id="card_title">
                             Account
                         </div> 
@@ -72,7 +75,8 @@
                          that leverages the power of web technologies and python to calculate probable 
                          productivity by analysing the time spent on different applications and web history.
                             It can also be deployed to a workspace to measure employee productivity for 
-                            effective analysis of their competitiveness and suggest courses, if required.</p>
+                            effective analysis of their competitiveness and suggest courses, if required.
+                    </p>
                 </div>
             </div>
         </div>
@@ -83,7 +87,8 @@
     <!-- normal script imports etc  -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>    
     <script src="../public/bootstrap/js/bootstrap.min.js"></script>    
-
+    <script src="./public/Chart.js/Chart.min.js"></script>
+    <script src="./render.js"></script>
     <!-- Insert this line after script imports -->
     <script>if (window.module) module = window.module;</script>
 </body>

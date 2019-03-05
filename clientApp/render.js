@@ -1,4 +1,4 @@
-new Chart(document.getElementById("countries"), {
+new Chart(document.getElementById("pie_chart"), {
     type: 'pie',
     data: {
       labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],

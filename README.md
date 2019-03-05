@@ -19,5 +19,6 @@ It can also be deployed to a workspace to measure employee productivity for effe
 
 ## Additional Documentation
 [Client Application](./clientApp/readme.md)
+[Installation Guide](./docs/installation.md)
 
 ### End

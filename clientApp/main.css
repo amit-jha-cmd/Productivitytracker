@@ -35,3 +35,14 @@
 #pie_chart {
     padding: 30px;
 }
+
+.close_button {
+    background: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    position: fixed;
+    top:7px;
+    left: 97%;
+}
+

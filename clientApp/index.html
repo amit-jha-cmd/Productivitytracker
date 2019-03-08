@@ -9,33 +9,36 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../public/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../public/render.css">
 </head>
-<body style="background: #F0F0F0;">
-    <ul class="nav nav-tabs" id="myTab" role="tablist" style="background: #D3D1D1;">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab"
-           data-toggle="tab" 
-           href="#home" role="tab"
-            aria-controls="home" 
-            aria-selected="true">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" 
-          id="profile-tab" 
-          data-toggle="tab" 
-          href="#profile" role="tab" 
-          aria-controls="profile" 
-          aria-selected="false">Log</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" 
-          id="contact-tab" 
-          data-toggle="tab" 
-          href="#contact" 
-          role="tab" 
-          aria-controls="contact"
-          aria-selected="false">About</a>
-        </li>
-      </ul>
+<body style="background: #F0F0F0; ">
+    <div style=" -webkit-app-region: drag;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="background: #D3D1D1;">
+            <li class="nav-item" style=" -webkit-app-region: no-drag;">
+            <a class="nav-link active" id="home-tab"
+            data-toggle="tab" 
+            href="#home" role="tab"
+                aria-controls="home" 
+                aria-selected="true">Dashboard</a>
+            </li>
+            <li class="nav-item" style=" -webkit-app-region: no-drag;">
+            <a class="nav-link" 
+            id="profile-tab" 
+            data-toggle="tab" 
+            href="#profile" role="tab" 
+            aria-controls="profile" 
+            aria-selected="false">Log</a>
+            </li>
+            <li class="nav-item" style=" -webkit-app-region: no-drag;">
+            <a class="nav-link" 
+            id="contact-tab" 
+            data-toggle="tab" 
+            href="#contact" 
+            role="tab" 
+            aria-controls="contact"
+            aria-selected="false">About</a>
+            </li>
+        </ul>
+        <button class="close_button">X</button>
+    </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="user_container row" >
@@ -56,11 +59,9 @@
                 <div id="card" style="margin-right:10px;">
                     <div id="card_title">
                             Account
-                        </div> 
+                        </div>
                 </div>
             </div>
-
-
         </div>
         <div class="tab-pane show fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 

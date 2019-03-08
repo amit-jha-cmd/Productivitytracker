@@ -5,7 +5,7 @@ function createWindow() {
     //create the browser window
     let win = new BrowserWindow({width: 900,
                                  height: 500, 
-                                 frame: false, 
+                                
                                  resizable: false
                                 });
     // win.setMenu(null);

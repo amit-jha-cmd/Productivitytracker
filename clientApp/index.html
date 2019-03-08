@@ -37,7 +37,7 @@
             aria-selected="false">About</a>
             </li>
         </ul>
-        <button class="close_button">X</button>
+        <button class="close_button" id="exit">X</button>
     </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -89,7 +89,13 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>    
     <script src="../public/bootstrap/js/bootstrap.min.js"></script>    
     <script src="./public/Chart.js/Chart.min.js"></script>
+    <script src="./user_chart.js"></script>
     <script src="./render.js"></script>
+    <!-- <script>
+        document.getElementById('exit').addEventListener('click', ()=>{
+            console.log("Exit button is working");
+        });
+    </script> -->
     <!-- Insert this line after script imports -->
     <script>if (window.module) module = window.module;</script>
 </body>

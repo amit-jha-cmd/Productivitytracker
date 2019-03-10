@@ -4,14 +4,16 @@
 A web application bundled with a desktop client that leverages the power of web technologies and python to calculate probable productivity by analysing the time spent on different applications and web history.
 It can also be deployed to a workspace to measure employee productivity for effective analysis of their competitiveness and suggest courses, if required.
 
-## How to run the web application
-`$: node app.js `
-
 ## Technology Stack
 1. HTML/CSS
 2. Node.js
 3. Electron
 4. MongoDB
+
+## Setup and Installation guide
+[Installation Guide](./docs/installation.md)
+
+[setup.md](./docs/setup.md)
 
 ## Developers 
 1. Sanjana Dabbiru (@sanjanadabbiru)
@@ -19,6 +21,5 @@ It can also be deployed to a workspace to measure employee productivity for effe
 
 ## Additional Documentation
 [Client Application](./clientApp/readme.md)
-[Installation Guide](./docs/installation.md)
 
 ### End

@@ -5,10 +5,8 @@ function createWindow() {
     //create the browser window
     let win = new BrowserWindow({width: 900,
                                  height: 500, 
-                                
                                  resizable: false
                                 });
-    let child = new BrowserWindow({parent: win, width: 100, height: 100, resizable: false});
     // win.setMenu(null);
     //and load the index.html of the app.
     win.loadFile('index.html');

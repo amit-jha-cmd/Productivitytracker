@@ -47,5 +47,24 @@
 }
 
 
+.user-container {
+    border: none;
+    width: 700px;
+    margin-left: 100px;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+    min-height: 50px;
+    margin-top: 10px;
+}
 
+.user-container:hover {
+    box-shadow: .1px .1px 10px;
+}
+
+#log_data {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 

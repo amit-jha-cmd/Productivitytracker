@@ -6,7 +6,7 @@
     <title>Productivity Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../public/render.css">
 </head>
 <body style="background: #F0F0F0; ">
@@ -73,6 +73,11 @@
 
                 <button class="btn btn-primary">log</button>
             </div>
+            <hr>
+            <div class="user-container">
+                <p id="log_data">Log entry</p> 
+            </div>
+
 
         </div>
         <div class="tab-pane show fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -94,11 +99,12 @@
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <!-- normal script imports etc  -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>    
-    <script src="../public/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="./bootstrap/js/bootstrap.min.js"></script>    
     <script src="./public/Chart.js/Chart.min.js"></script>
     <script src="./user_chart.js"></script>
     <script src="./render.js"></script>
     <script src="./db_runner.js"></script>
+    <script src="./log.js"></script>
     <!-- Insert this line after script imports -->
     <script>if (window.module) module = window.module;</script>
 </body>

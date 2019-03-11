@@ -6,4 +6,5 @@ setInterval(()=>{
 
     var labelTime = hour + ":" + min + ":" + sec; 
     document.getElementById("time").innerHTML = labelTime;
-})
+});
+

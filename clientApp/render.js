@@ -1,3 +1,5 @@
+'use strict';
+
 const {ipcRenderer} = require('electron');
 const remote = require('electron').remote;
 document.getElementById('exit').addEventListener('click', ()=>{

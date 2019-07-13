@@ -1,4 +1,4 @@
-const db = require('./db_setup');
+const db = require('./database');
 // const db = import('./db_setup');
 var labelTime;
 setInterval(()=>{
@@ -62,52 +62,44 @@ db.connect((err)=>{
                 return false;
             }
         });
+    
+
+        document.getElementById("button-addon2").addEventListener("click", ()=>{
+            log_update();
+        });
+
+        document.getElementById("data-tab").addEventListener("click", ()=>{
+            log_update();
+        });
         
-        db.getDB().collection(collection).find({}).toArray((err, documents)=>{
+        const log_update = () => {
+            db.getDB().collection(collection).find({}).toArray((err, documents)=>{
             if(err){
                 console.log("error");
             }
             else{
                 console.log("Connected to the database");
-
-                //THIS IS FOR LOG-DATA TAB
-                // ======================================================================
-                // for(let i = 0; i < documents.length; i++){
-                //     document.getElementById("log_list").innerHTML += ('<li><div class="user-container">'
-                //                                                  + documents[i].entry + 
-                //                                                  '</li></div>')
-
-
-                // document.getElementById("button-addon2").addEventListener('click', ()=>{
-                //     console.log("button is working");
-                //     document.getElementById("log_list").innerHTML = "";
-                //     for(let i = 0; i < documents.length; i++){
-                //         document.getElementById("log_list").innerHTML += ('<li><dir class="entered-log">\
-                // 			<p class="entered-sol">' + documents[i].time + '</p>\
-                // 			<p class="log_display"> ' + documents[i].entry  +'</p>\
-                // 		</dir>\
-                // 	</li>')
-                    // }
-                // });
-
-                // ======================================================================
-                console.log("button is working");
-                document.getElementById("data-tab").addEventListener("click", ()=>{
+                const log_list = () => {
                     console.log("This is a log entry");
                     document.getElementById("list").innerHTML = "";
                     for(var i = 0; i < documents.length; i++){
                         document.getElementById("list").innerHTML += ('\
-                            <li><dir class="entered-log">\
-                            <p class="entered-sol">' + documents[i].time + '</p>\
-                            <p class="log_display"> ' + documents[i].data + '</p>\
-                            </dir>\
+                            <li><div class="input-group" style="margin: 0; width:100%;">\
+                            <div class="input-group-prepend">\
+                              <span class="input-group-text" style="background-color: rgb(62, 92, 224); color: white;"\
+                                );">' + documents[i].time + '</span>\
+                            </div>\
+                            <div class="form-control" aria-label="With textarea" id="log_cont" contenteditable="false">' + documents[i].data + '</div>\
+                          </div>\
                             </li>\
                     ');
+                    }   
+                }   
+                    log_list();
                 }
-            });      
-        }
+            }
+        )};
     }
-)};
 
 //should not be here. find another way to do it.
 /*
@@ -124,3 +116,9 @@ db.getDB().collection.find({email: document.getElementById("email").value},
 */
 }
 );
+
+/*
+<div class="input-group-append">\
+    <span class="input-group-text" style="background-color: red; color: white;">X</span>\
+</div>\
+*/

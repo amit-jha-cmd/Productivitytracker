@@ -1824,6 +1824,7 @@ pre code {
 
   /* USER ADDED */
   resize: none;
+  overflow: hidden;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

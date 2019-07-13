@@ -102,10 +102,19 @@
         </div>
 
         <div class="tab-pane show fade" id="data" role="tabpanel" aria-labelledby="data-tab">
-                <ul id="list">
-                        
-                </ul>
-            </ui>
+                <div class="input-group mb-3">
+                        <div class="input-group-append">
+                                <label class="input-group-text" for="inputGroupSelect02">View By</label>
+                              </div>
+                        <select class="custom-select" id="inputGroupSelect02">
+                          <option selected>Choose...</option>
+                          <option value="1">Date</option>
+                          <option value="2">Time</option>
+                          <option value="3">Year</option>
+                        </select>
+                      </div>
+                      <hr>
+                 <ul id="list"></ul>
         </div>
 
 
@@ -129,8 +138,8 @@
     <script src="./bootstrap/js/bootstrap.min.js"></script>    
     <script src="./public/Chart.js/Chart.min.js"></script>
     <script src="./user_chart.js"></script>
-    <script src="./render.js"></script>
-    <script src="./db_runner.js"></script>
+    <script type= "text/jsx" src="./render.js"></script>
+    <script src="./db_interface.js"></script>
     <script src="./log.js"></script>
     <script>if (window.module) module = window.module;</script>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>

@@ -4,6 +4,7 @@ var labelTime;
 var date;
 var month;
 var year;
+var loggedin = false;
 setInterval(()=>{
     var t = new Date();
     var hour = t.getHours();
@@ -11,7 +12,7 @@ setInterval(()=>{
     var sec = t.getSeconds();
     labelTime = hour + ":" + min + ":" + sec; 
     date = t.getDate();
-    mon = t.getMonth();
+    month = t.getMonth();
     year = t.getFullYear();
     document.getElementById("time").innerHTML = labelTime;
 });
@@ -24,20 +25,28 @@ db.connect((err)=>{
         console.log('Unable to connect to the database');
     }
     else{
-        // console.log(logcount);
 
-        db.getDB().collection(collection).find({}).toArray((err, documents)=>{
+        var signin = () => {
+            var username = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+        };
+
+        // console.log(logcount);
+        var logcount = 0;
+        var prodUpdate = ()=> {
+            db.getDB().collection(collection).find({}).toArray((err, documents)=>{
             if(err){
                 console.log("error");
             }
             else{
+                document.getElementById("Productivity").innerHTML = "";
                 for(var i = 0; i < documents[0].history.app.length; i++){
                     document.getElementById("Productivity").innerHTML += ('\
                     <div class="input-group" style="width: 95%; margin-left:5px;">\
                     <div class="input-group-prepend">\
-                        <span class="input-group-text" style="background: rgb(82, 82, 224); color: white; width: 200px;">' + documents[0].history.app[i].name + '</span>\
+                        <span class="input-group-text" style="background: rgb(82, 82, 224); color: white; width: 170px;">' + documents[0].history.app[i].name + '</span>\
                     </div>\
-                    <p type="text" aria-label="Last name" class="form-control">'+  documents[0].history.app[i].duration +'</p>\
+                    <p type="text" aria-label="Last name" class="form-control">'+  Math.floor(((documents[0].history.app[i].duration) * 5)/60) +' Min.</p>\
                 </div>\
                 ');
                 }
@@ -47,8 +56,14 @@ db.connect((err)=>{
                 else{
                     document.getElementById("last-updated").innerHTML = "Last updated at: Never";
                 }
+                logcount = documents[0].log.length;
             }
-            });   
+            }); 
+        }
+        prodUpdate();
+        setInterval(() => {
+            prodUpdate();
+        }, 3000);
 
 
         document.getElementById("button-addon2").addEventListener('click', ()=>{
@@ -57,17 +72,17 @@ db.connect((err)=>{
         if(data != ""){
             var log = {
                 "log" : data,
-                "date": null,
+                "date": date,
+                "month": month,
+                "year": year,
                 "time" : labelTime,
                 "tag": null
             };
             logcount++;
             // db.getDB().collection(collection).insertOne({"log":"2"});
             db.getDB().collection(collection).updateOne({_id: mongoose.Types.ObjectId("5d2e0325efa0501e168696bc")}, 
-                                                    {$push: {"log": log}});
-            db.getDB().collection(collection).updateOne({_id: mongoose.Types.ObjectId("5d2e0325efa0501e168696bc")}, {
-                $inc: {logCount: logcount}
-            });
+                                                    {$push: {"log": log},
+                                                    $inc: {logCount: 1}});
             document.getElementById("log_data").value = null;
         }
         else{
@@ -122,44 +137,32 @@ db.connect((err)=>{
             }
         )};
 
-        var id;
-        var str = "";
         const login = ()=> {
-            db.getDB().collection(collection).find({email: document.getElementById("email").value},
-            {pswd: document.getElementById("password").value}).toArray((err, documents)=>{
-                if(err){
+            var doc = db.getDB().collection(collection).findOne({username: document.getElementById("email").value,
+                                                                password: document.getElementById("password").value})
+            
+            doc.then((value)=>{
+                if(value === null){
                     console.log("login attempt failed");
+                    return
                 }
-                else{
-                    document.getElementById('pswd_cont').remove();
-                    id = documents[0]._id.id;
-                    console.log(id);
-                    id.forEach(ele => {
-                        str += ele.toString();
-                    });
-                }
-                
+                document.getElementById('login').__proto__.userId = value._id;
+                document.getElementById('pswd_cont').style.display = "none";
+                document.getElementById('login').innerHTML = "Signout";
+                loggedin = true;
+                console.log(document.getElementById('login').__proto__.userId.toString());
             });
-            id = str;
-        };
-
+        }
         document.getElementById('login').addEventListener('click', ()=>{
-            login();
+            if(loggedin === false){
+                login();
+            }
+            else{
+                document.getElementById('login').__proto__.userId = null;
+                console.log("Logout");
+                loggedin = false;
+            }
         });
     }
-
-//should not be here. find another way to do it.
-/*
-db.getDB().collection.find({email: document.getElementById("email").value},
-{pswd: document.getElementById("password").value}).toArray((err, documents)=>{
-    document.getElementById("login").onclick('click', ()=>{
-        var window = remote.getCurrentWindow();
-        window.close();
-    });
-    document.getElementById("username").innerHTML = documents.email;
-    document.getElementById("type").innerHTML = documents.type;
-    console.log("login worked");
-});
-*/
 }
 );

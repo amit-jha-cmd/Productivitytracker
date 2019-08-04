@@ -57,16 +57,29 @@
                         </div>
                         <div>
                             <canvas id="pie_chart" width="300" height="300"></canvas>
-                        </div>                           
+                        </div> 
+                        <div class="input-group mb-3" style="margin-top: -10px; width: 95%; margin-left: 7px">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">View By</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option value="1" selected>Application</option>
+                              <option value="2">Productivity</option>
+                              <option value="3">History</option>
+                            </select>
+                          </div>                          
                     </div>
                     <div id="card">
-                        <div id="card_title">
-                                Productivity
-                        </div> 
-                        <div id="Productivity">
+                        <div id="productivity_container">
+                                <div id="card_title">
+                                        Productivity
+                                </div> 
+                                <div id="Productivity">
+                                </div>
+                                <hr>
+                                <button type="button" class="btn btn-primary" id="appInsert">Add Application</button>
+                                <button type="button" class="btn btn-primary" id="keywordInsert">Add keyword</button>
                         </div>
-                        
-
                         
                     </div>
 
@@ -74,6 +87,7 @@
                         <div id="card_title">
                                 Account
                             </div>
+                            <img src="./assets/logo_large.png" style="width: 50%; margin-left: 25%; margin-top: 5px;">
                         <div class="input-group mb-3" style="width: 90%; margin-left: 15px;">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">@</span>
@@ -131,13 +145,15 @@
 
             <div class="tab-pane show fade" id="about" role="tabpanel" aria-labelledby="about-tab">
                 <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <h1 class="display-4">Productivity Tracker</h1>
+                    <div class="container"  style="margin-top: -20px;">
+                        <h1 class="display-6">Productivity Tracker</h1>
                         <p class="lead">A web application bundled with a desktop client
                             that leverages the power of web technologies and python to calculate probable 
                             productivity by analyzing the time spent on different applications and web history.
                                 It can also be deployed to a workspace to measure employee productivity for 
                                 effective analysis of their competitiveness and suggest courses, if required.
+                                <br>
+                                <h4>Developer: Amit Jha</h4>
                         </p>
                     </div>
                 </div>
@@ -149,9 +165,8 @@
         <script src="./bootstrap/js/bootstrap.min.js"></script>    
         <script src="./public/Chart.js/Chart.min.js"></script>
         <script src="./user_chart.js"></script>
-        <script type= "text/jsx" src="./render.js"></script>
-        <script src="./db_interface.js"></script>
-        <script src="./log.js"></script>
+        <script src="./interface.js"></script>
+        <script src="./history.js"></script>
         <script>if (window.module) module = window.module;</script>
         <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>

@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "active-win": "^5.1.2",
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "ejs": "^2.6.1",
     "ejs-electron": "^2.0.3",
     "mongodb": "^3.1.13",

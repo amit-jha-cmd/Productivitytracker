@@ -13,7 +13,7 @@
   "author": "Amit Jha (@devbihari)",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^4.0.5"
+    "electron": "^15.5.5"
   },
   "dependencies": {
     "active-win": "^5.1.2",
